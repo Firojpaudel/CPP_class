@@ -13,7 +13,7 @@ int main(){
         }
     }
     if (count == 2){
-        cout<< num << "is a prime number.";
+        cout<< num << " is a prime number.";
     }
     else{
         cout<< "Sorry! "<< num << " is not a prime number.";
