@@ -20,7 +20,7 @@ double area(double radius){
 int main ()
 {
     int select;
-    cout<<"Enter the shape number: ";
+    cout<<"Enter the shape number: "<<endl;
     cout<<"1= square"<<endl;
     cout<<"2= triangle"<<endl;
     cout<<"3= circle"<<endl;

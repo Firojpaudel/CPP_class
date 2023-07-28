@@ -12,7 +12,7 @@ int volume (int l, int b, int h=10){
 
 int main (){
     int l,b;
-    cout<<"Enter the values of length and breadth: ";
+    cout<<"Enter the values of length and breadth: "<<endl;
     cin>> l >>b;
-    cout<< volume(l,b);
+    cout<< "The volume is: "<<volume(l,b)<<endl;
 }
