@@ -34,7 +34,7 @@ class test{
 
 int main (){
     int x,y;
-    // test (x,y);
+    test t1 (x,y);
     //OR
     test t = test(x,y);
 }
