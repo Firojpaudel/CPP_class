@@ -39,29 +39,29 @@
 //     test t = test(x,y);
 // }
 
-// //Copy constructor
-//  #include<iostream>
-// using namespace std;
+//Copy constructor
+ #include<iostream>
+using namespace std;
 
-// class test{
-//     int x,y;
-//     public:
-//     test(){
-//         cout<<"Enter the value of x: ";
-//         cin>>x;
-//     }
-//     test (test &t)
-//     {
-//         cout<<t.x;
-//     }
-// };
+class test{
+    int x,y;
+    public:
+    test(){
+        cout<<"Enter the value of x: ";
+        cin>>x;
+    }
+    test (test &t)
+    {
+        cout<<t.x;
+    }
+};
 
-// int main (){
-//     test t1;
-//     test t2=t1;
-//     //OR
-//     // test t2(t1);
-// }
+int main (){
+    test t1;
+    test t2=t1;
+    //OR
+    // test t2(t1);
+}
 
 //Constructor Overloading::
 #include <iostream>
