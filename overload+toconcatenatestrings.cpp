@@ -1,3 +1,4 @@
+/* WAP to overload + operator to concatenate two strings*/
 #include<iostream>
 using namespace std;
 class str{

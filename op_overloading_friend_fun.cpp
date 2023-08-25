@@ -1,4 +1,4 @@
-/*4. WAP to two complex numbers using operator overload by friend function.*/
+/*WAP to add two complex numbers using operator overload by friend function.*/
 #include <iostream>
 using namespace std;
 class complex {
