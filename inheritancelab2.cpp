@@ -7,7 +7,9 @@ class Fruit{
     int numFruits;
 
     public:
-    Fruit(int num): numFruits(num){}
+    Fruit(int num){
+        numFruits= num;
+    }
 
     int get_num() {
         return numFruits;
