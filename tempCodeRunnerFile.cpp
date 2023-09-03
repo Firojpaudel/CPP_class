@@ -1,44 +1,40 @@
+/*WAP to convert user-defined datatype to another user-defined datatype (source).*/
 #include<iostream>
 using namespace std;
 
-class two; // pre-declaration
-
-class one {
-    int secondPvtData;  
-
-public:
-    one(int data) : secondPvtData(data) {}
-
-    void access(two objA);
-    friend void bridge(two objA, one objB);
-};
-
-class two {
-    int pvtData;
-
-public:
-    two(int data) : pvtData(data) {}
-
-    void access(one objB) {
-        bridge(*this, objB);
+class Celsius{ //destination class
+    double temp1;
+    public:
+    Celsius(){
+        temp1=0;
     }
-    friend void bridge(two objA, one objB);
+    Celsius(double temp){
+        temp1= temp; //Constructor definition 
+    }
+    void show(){
+        cout<<"Celsius: "<<temp1;
+    }
 };
 
-void bridge(two objA, one objB) {
-    cout << "Class one is accessing the private data of Class two: " << objA.pvtData << endl;
-    cout << "Class two is accessing the private data of Class one: " << objB.secondPvtData << endl;
-}
-
-void one::access(two objA) {
-    bridge(objA, *this);
-}
+class Fahrenheit{ //Source Class
+    double temperature;
+    public:
+    Fahrenheit(double temp){
+        temperature= temp; 
+    }
+    operator Celsius(){
+        return Celsius((temperature- 32.0) * (5.0 / 9.0));
+    }
+};
 
 int main() {
-    two objectA(10);
-    one objectB(20);
+    // User input for Fahrenheit
+    double Ftemp;
+    cout << "Enter the temperature in Fahrenheit: ";
+    cin >> Ftemp;
 
-    objectB.access(objectA);
-
-    return 0;
+    Celsius c;
+    Fahrenheit f(Ftemp);
+    c=f;
+    c.show();
 }
