@@ -45,95 +45,95 @@
 //     return 0;
 // }
 
-// /*WAP to convert user-defined datatype to another user-defined datatype (destination).*/
-// #include <iostream>
-// using namespace std;
-// //Defining userdefined datatype for Celsius
-// class Celsius{ //Source Class
-//     double temperature;
-//     public:
-//         Celsius(double temp){
-//             temperature = temp;  //Constructor definition 
-//         }
-
-//         double getTemp() const{
-//             return temperature;
-//         }
-// };
-
-// //Defining userdefined data type for fahrenhiet temperature
-// class Fahrenhiet{ //Destination Class
-//     double temperature;
-//     public:
-//     Fahrenhiet(double temp){
-//         temperature= temp;
-//     }
-
-//     double getTemp() const{
-//         return temperature;
-//     }
-// };
-
-// //Converting Celsisus to Fahrenhiet
-// Fahrenhiet CtoF(Celsius c){
-//     double f= (c.getTemp()*9.0/5.0)+32.0;
-//     return Fahrenhiet(f);
-// }
-
-// int main (){
-//     //User input for Celsius 
-//     double Ctemp;
-//     cout<<"Enter the temperature in Celsius: ";
-//     cin>>Ctemp;
-//     //Celsisus object with the user input of above
-//     Celsius c(Ctemp);
-//     //C to F
-//     Fahrenhiet f=CtoF(c);
-//     //Display
-//     cout<<"The converted degree in Fahrenhiet is: "<<f.getTemp()<<endl;
-//     return 0;
-// }
-
-/*WAP to convert user-defined datatype to another user-defined datatype (source).*/
-#include<iostream>
+/*WAP to convert user-defined datatype to another user-defined datatype (destination).*/
+#include <iostream>
 using namespace std;
-
-class Celsius{ //destination class
-    double temp1;
-    public:
-    Celsius(){
-        temp1=0;
-    }
-    Celsius(double temp){
-        temp1= temp; //Constructor definition 
-    }
-    void show(){
-        cout<<"Celsius: "<<temp1;
-    }
-};
-
-class Fahrenheit{ //Source Class
+//Defining userdefined datatype for Celsius
+class Celsius{ //Source Class
     double temperature;
     public:
-    Fahrenheit(double temp){
-        temperature= temp; 
+        Celsius(double temp){
+            temperature = temp;  //Constructor definition 
+        }
+
+        double getTemp() const{
+            return temperature;
+        }
+};
+
+//Defining userdefined data type for fahrenhiet temperature
+class Fahrenhiet{ //Destination Class
+    double temperature;
+    public:
+    Fahrenhiet(double temp){
+        temperature= temp;
     }
-    operator Celsius(){
-        return Celsius((temperature- 32.0) * (5.0 / 9.0));
+
+    double getTemp() const{
+        return temperature;
     }
 };
 
-int main() {
-    // User input for Fahrenheit
-    double Ftemp;
-    cout << "Enter the temperature in Fahrenheit: ";
-    cin >> Ftemp;
-
-    Celsius c;
-    Fahrenheit f(Ftemp);
-    c=f;
-    c.show();
+//Converting Celsisus to Fahrenhiet
+Fahrenhiet CtoF(Celsius c){
+    double f= (c.getTemp()*9.0/5.0)+32.0;
+    return Fahrenhiet(f);
 }
+
+int main (){
+    //User input for Celsius 
+    double Ctemp;
+    cout<<"Enter the temperature in Celsius: ";
+    cin>>Ctemp;
+    //Celsisus object with the user input of above
+    Celsius c(Ctemp);
+    //C to F
+    Fahrenhiet f=CtoF(c);
+    //Display
+    cout<<"The converted degree in Fahrenhiet is: "<<f.getTemp()<<endl;
+    return 0;
+}
+
+// /*WAP to convert user-defined datatype to another user-defined datatype (source).*/
+// #include<iostream>
+// using namespace std;
+
+// class Celsius{ //destination class
+//     double temp1;
+//     public:
+//     Celsius(){
+//         temp1=0;
+//     }
+//     Celsius(double temp){
+//         temp1= temp; //Constructor definition 
+//     }
+//     void show(){
+//         cout<<"Celsius: "<<temp1;
+//     }
+// };
+
+// class Fahrenheit{ //Source Class
+//     double temperature;
+//     public:
+//     Fahrenheit(double temp){
+//         temperature= temp; 
+//     }
+//     operator Celsius(){
+//         return Celsius((temperature- 32.0) * (5.0 / 9.0));
+//     }
+// };
+
+// int main() {
+//     // User input for Fahrenheit
+//     double Ftemp;
+//     cout << "Enter the temperature in Fahrenheit: ";
+//     cin >> Ftemp;
+
+//     Celsius c;
+//     Fahrenheit f(Ftemp);
+//     c=f;
+//     c.show();
+// }
 
 // /*WAP to convert user-defined datatype to basic datatype.*/
 // #include<iostream>

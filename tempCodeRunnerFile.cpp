@@ -1,40 +1,48 @@
-/*WAP to convert user-defined datatype to another user-defined datatype (source).*/
+/*Make a class named Fruit with data member to calculate no. of fruits in a basket. Create two other classes named Apples and Mangoes to calculate number of apples and mangoes in basket. Print the number of fruits of each type and total no. of fruits in the basket.*/
+
 #include<iostream>
 using namespace std;
 
-class Celsius{ //destination class
-    double temp1;
+class Fruit{
+    int numFruits;
+
     public:
-    Celsius(){
-        temp1=0;
+    Fruit(int num){
+        numFruits= num;
     }
-    Celsius(double temp){
-        temp1= temp; //Constructor definition 
-    }
-    void show(){
-        cout<<"Celsius: "<<temp1;
+
+    int get_num() {
+        return numFruits;
     }
 };
 
-class Fahrenheit{ //Source Class
-    double temperature;
+class Mangoes: public Fruit{
     public:
-    Fahrenheit(double temp){
-        temperature= temp; 
-    }
-    operator Celsius(){
-        return Celsius((temperature- 32.0) * (5.0 / 9.0));
+    Mangoes(int num): Fruit(num){}
+
+    void print_mangoes(){
+        cout<<"Number of mangoes: "<<get_num()<<endl;
     }
 };
 
-int main() {
-    // User input for Fahrenheit
-    double Ftemp;
-    cout << "Enter the temperature in Fahrenheit: ";
-    cin >> Ftemp;
+class Apples: public Fruit{
+    public:
+    Apples(int num): Fruit(num){}
 
-    Celsius c;
-    Fahrenheit f(Ftemp);
-    c=f;
-    c.show();
+    void print_apples(){
+        cout<<"Number of apples: "<<get_num()<<endl;
+    }
+};
+
+int main (){
+    Mangoes mango_object(5); //5 mangoes
+    Apples apple_object(3); // 3 mangoes
+    //output part
+    mango_object.print_mangoes();
+    apple_object.print_apples();
+    //total number of fruits
+    int totalFruits= apple_object.get_num() + mango_object.get_num();
+    cout<<"Total number of fruits in basket is: "<<totalFruits<<endl;
+
+    return 0;
 }
